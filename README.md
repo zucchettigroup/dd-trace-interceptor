@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/zucchettigroup/dd-trace-interceptor/actions/workflows/maven.yml/badge.svg)](https://github.com/zucchettigroup/dd-trace-interceptor/actions/workflows/maven.yml)
+
 # dd-trace-interceptor
 
 This project aims to extend the database tags of a query type span in Datadog. We would show which and how a single service uses the resources of a shared SQL Cluster.
