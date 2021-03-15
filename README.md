@@ -9,8 +9,8 @@ To achieve the goal, we need to do the following tasks for each query span:
 How to configure in Apache Tomcat:
 
 ```
-cp ztracer-interceptor-jdk-1.8.jar /opt/tomcat_b/lib/
-vi /opt/<tomcat_name>/conf/server.xml
+cp ztracer-interceptor-jdk-1.8.jar $CATALINA_HOME/lib/
+vi $CATALINA_HOME/conf/server.xml
 <Listener className="com.zucchetti.ztracer.interceptor.tomcat.TraceInterceptorLifecycleListener" queryExtraInfo="true" debugMode="false" />
 ```
 
