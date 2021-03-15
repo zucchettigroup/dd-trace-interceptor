@@ -3,8 +3,8 @@
 This project aims to extend the database tags of a query type span in Datadog. We would show which and how a single service uses the resources of a shared SQL Cluster.
 
 To achieve the goal, we need to do the following tasks for each query span:
-1. Convert a DNS alias into the real SQL cluster name
-2. Add to the query spans the name of the LocalRootSpan service
+1. Convert a DNS alias (*peer.hostname*) into the real SQL cluster name (*db.cluster*)
+2. Add the name of the LocalRootSpan service (*db.service*)
 
 How to configure in Apache Tomcat:
 
