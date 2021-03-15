@@ -12,22 +12,6 @@ import com.zucchetti.ztracer.interceptor.logger.LoggerFactory;
 
 import datadog.trace.api.interceptor.TraceInterceptor;
 
-/**
- * ELENCO STATI DISPONIBILI: 
-    INITIALIZING(false, Lifecycle.BEFORE_INIT_EVENT),
-    INITIALIZED(false, Lifecycle.AFTER_INIT_EVENT),
-    STARTING_PREP(false, Lifecycle.BEFORE_START_EVENT),
-    STARTING(true, Lifecycle.START_EVENT),
-    STARTED(true, Lifecycle.AFTER_START_EVENT),
-    STOPPING_PREP(true, Lifecycle.BEFORE_STOP_EVENT),
-    STOPPING(false, Lifecycle.STOP_EVENT),
-    STOPPED(false, Lifecycle.AFTER_STOP_EVENT),
-    DESTROYING(false, Lifecycle.BEFORE_DESTROY_EVENT),
-    DESTROYED(false, Lifecycle.AFTER_DESTROY_EVENT)
-    
- * @author GROMAS
- *
- */
 public class TraceInterceptorLifecycleListener implements LifecycleListener
 {
 	private boolean debugMode = false;

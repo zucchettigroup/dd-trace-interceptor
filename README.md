@@ -6,7 +6,13 @@ To achieve the goal, we need to do the following tasks for each query span:
 1. Convert a DNS alias (*peer.hostname*) into the real SQL cluster name (*db.cluster*)
 2. Add the name of the LocalRootSpan service (*db.service*)
 
-How to configure in Apache Tomcat:
+The entrypoint of the interceptor is the method *lifecycleEvent* called by Apache Tomcat during startup:
+
+```
+void com.zucchetti.ztracer.interceptor.tomcat.TraceInterceptorLifecycleListener.lifecycleEvent(LifecycleEvent event)
+```
+
+How to configure Apache Tomcat:
 
 ```
 cp ztracer-interceptor-jdk-1.8.jar $CATALINA_HOME/lib/
@@ -14,7 +20,7 @@ vi $CATALINA_HOME/conf/server.xml
 <Listener className="com.zucchetti.ztracer.interceptor.tomcat.TraceInterceptorLifecycleListener" queryExtraInfo="true" debugMode="false" />
 ```
 
-Database span tags after adding *db.service* and *db.cluster*
+Datadog database span tags after adding *db.service* and *db.cluster*
 
 ```
 db {	
